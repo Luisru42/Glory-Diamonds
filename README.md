@@ -1,0 +1,2 @@
+# Glory-Diamonds
+Glory links
