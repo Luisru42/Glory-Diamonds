@@ -1,0 +1,177 @@
+/* style.css - Updated with background.png and adjusted for image */
+
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* Background Image */
+    background-image: url('background.png'); /* YOUR BACKGROUND IMAGE */
+    background-color: #0a0a0a; /* Fallback color if image doesn't load / shows through transparency */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    background-attachment: fixed; /* Keeps the background image fixed as content scrolls */
+
+    /* Removed diamond pattern properties and animation */
+    /* animation: moveDiamondGrid 20s linear infinite alternate;  <-- REMOVED */
+
+
+    color: #333333; /* Dark grey text for contrast on white (for general body text outside containers) */
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar from animation */
+}
+
+/* Removed Keyframe Animation for Diamond Grid Movement as there are no diamonds */
+/* @keyframes moveDiamondGrid { ... }  <-- REMOVED ENTIRELY */
+
+
+/* Profile Header - Now with button-like background */
+.profile-header {
+    margin-bottom: 30px;
+    padding: 25px 30px; /* Added padding to give space around text */
+    max-width: 600px; /* Ensure it doesn't span full width */
+    width: 100%; /* Take full width within max-width */
+    border-radius: 12px; /* Rounded corners like buttons */
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent blue background */
+    -webkit-backdrop-filter: blur(5px); /* Frosted glass effect for Safari */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Similar shadow to buttons */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #258ce0; /* A purple/violet border for contrast */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    color: #ffffff; /* WHITE text for contrast on blue background */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for pop */
+}
+
+.profile-bio {
+    font-size: 1.1em;
+    color: #e0e0e0; /* Light grey text for bio on blue background */
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Links Container */
+.links-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 10;
+    position: relative;
+    margin-top: 30px; /* Add some space above links now that header has padding */
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85); /* Vibrant blue with some transparency */
+    color: #ffffff; /* White text on blue buttons */
+    padding: 16px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on buttons */
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Subtle white border */
+    -webkit-backdrop-filter: blur(500px);
+    backdrop-filter: blur(500px);
+}
+
+.link-button:hover {
+    background-color: #258ce0; /* Darker blue on hover, less transparent */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4); /* Even deeper shadow on hover */
+    border: 2px solid #ffffff; /* Solid white border on hover */
+}
+
+/* Optional: Add icons to buttons */
+.link-button i {
+    margin-right: 12px;
+    font-size: 1.4em;
+}
+
+/* Footer - Now with button-like background */
+.footer {
+    margin-top: auto;
+    padding: 20px 30px; /* Added padding */
+    max-width: 600px; /* Max width for footer */
+    width: 100%; /* Take full width within max-width */
+    border-radius: 12px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent blue background */
+    -webkit-backdrop-filter: blur(5px); /* Frosted glass effect for Safari */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    font-size: 0.9em;
+    color: #ffffff; /* WHITE text for footer on blue background */
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Similar shadow to buttons */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .profile-header, .links-container, .footer {
+        padding: 15px 20px; /* Adjust padding for smaller screens */
+    }
+    h1 {
+        font-size: 1.9em;
+    }
+    .profile-bio {
+        font-size: 0.95em;
+        padding: 0 5px;
+    }
+    .link-button {
+        font-size: 1em;
+        padding: 14px 20px;
+    }
+    .link-button i {
+        font-size: 1.2em;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+    .profile-bio {
+        font-size: 0.9em;
+    }
+}
